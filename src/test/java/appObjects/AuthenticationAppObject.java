@@ -18,4 +18,8 @@ public class AuthenticationAppObject {
     public WebElement getPasswordTextField(){
         return driver.findElement(By.id("passwd"));
     }
+
+    public WebElement getSignInButton(){
+        return driver.findElement(By.id("SubmitLogin"));
+    }
 }
