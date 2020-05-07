@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import tasks.AuthenticationTask;
@@ -21,9 +23,10 @@ public class SuccessfulPurchaseTest {
         authenticationTask = new AuthenticationTask(driver);
     }
 
-    @Test
-    public void purchaseTest() throws InterruptedException {
-        authenticationTask.account();
+    @ParameterizedTest
+    @CsvFileSource(resources = "/dados.csv")
+    public void purchaseTest(String email, String senha) throws InterruptedException {
+        authenticationTask.account(email, senha);
         Thread.sleep(4000);
     }
 
