@@ -14,4 +14,8 @@ public class AuthenticationAppObject {
     public WebElement getEmailTextField(){
         return driver.findElement(By.id("email"));
     }
+
+    public WebElement getPasswordTextField(){
+        return driver.findElement(By.id("passwd"));
+    }
 }
