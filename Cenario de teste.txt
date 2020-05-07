@@ -1,0 +1,19 @@
+Cenário de teste: Compra produto com sucesso
+
+Dado: O usuario deve acesso http://automationpractice.com/index.php?controller=authentication&back=my-account
+
+E: Validação titulo login "Login - My Store", arquivo dados.CSV preenche para email, senha e clica botão "Sign in".
+E: Validação titulo conta "My account - My Store" e clica botão "Home".
+E: Validação titulo home "My Store" e clica um produto "Blouse".
+E: Validação titulo produto "Blouse - My Store", Quantity deve ser "2", Size deve ser "M", Color deve ser "branco" e clica botão "Add to cart".
+E: Validação frase "Product successfully added to your shopping cart" e clica botão "Proceed to checkout".
+E: Validação a pagina "SHOPPING-CART SUMMARY", validação total products "$54.00", validação total shipping "$2.00", validação total "$56.00" e clica botão "Proceed to checkout".
+E: Validação todos dados "YOUR DELIVERY ADDRESS", preenche textarea "Teste de mensagem" e clica botão "Proceed to checkout".
+E: Validação a pagina "SHIPPING", marca checkbox baixo "Terms of service" e clica botão "Proceed to checkout".
+E: Validação a pagina "PLEASE CHOOSE YOUR PAYMENT METHOD", Validação total "$56.00" e clica botão "Pay by bank wire".
+E: Validação a pagina "ORDER SUMMARY", validação frase "BANK-WIRE PAYMENT." e clica botão "I confirm my order".
+E: Validação a pagina "ORDER CONFIRMATION"
+
+Quando: O usuario faz comprando o produto e aparecendo "ORDER CONFIRMATION".
+
+Então: O usuario já está comprar finalizado com sucesso e escrito "Your order on My Store is complete."
