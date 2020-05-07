@@ -15,5 +15,6 @@ public class AuthenticationTask {
     public void account(String email, String senha){
         authenticationAppObject.getEmailTextField().sendKeys(email);
         authenticationAppObject.getPasswordTextField().sendKeys(senha);
+        authenticationAppObject.getSignInButton().click();
     }
 }
