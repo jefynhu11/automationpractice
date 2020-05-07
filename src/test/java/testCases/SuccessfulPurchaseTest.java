@@ -12,6 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import tasks.AuthenticationTask;
 
 import static frameworks.BaseTestFw.getDriver;
+import static frameworks.ReportFw.setUpConfigure;
+import static frameworks.ReportFw.setUpStart;
 
 public class SuccessfulPurchaseTest extends BaseTestFw {
     private WebDriver driver = getDriver();
@@ -19,6 +21,8 @@ public class SuccessfulPurchaseTest extends BaseTestFw {
 
     @BeforeEach
     public void setUp(){
+        setUpConfigure("Automação", "AutomationPractice");
+        setUpStart("Compra com sucesso");
         driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
         authenticationTask = new AuthenticationTask(driver);
     }
