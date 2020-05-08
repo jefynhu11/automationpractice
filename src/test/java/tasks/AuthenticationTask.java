@@ -19,11 +19,11 @@ public class AuthenticationTask {
     public void account(String email, String senha){
         if(driver.getTitle().equals("Login - My Store")) {
             log(Status.PASS, "Validação - O titulo Login correto.");
+            authenticationAppObject.getEmailTextField().sendKeys(email);
+            authenticationAppObject.getPasswordTextField().sendKeys(senha);
+            authenticationAppObject.getSignInButton().click();
         } else {
             log(Status.ERROR, "Validação - O titulo Login incorreto", screenshotCapture(driver));
         }
-        authenticationAppObject.getEmailTextField().sendKeys(email);
-        authenticationAppObject.getPasswordTextField().sendKeys(senha);
-        authenticationAppObject.getSignInButton().click();
     }
 }
