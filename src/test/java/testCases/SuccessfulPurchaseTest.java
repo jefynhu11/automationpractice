@@ -31,7 +31,7 @@ public class SuccessfulPurchaseTest extends BaseTestFw {
     @CsvFileSource(resources = "/dados.csv")
     public void purchaseTest(String email, String senha) throws InterruptedException {
         authenticationTask.account(email, senha);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
 }
