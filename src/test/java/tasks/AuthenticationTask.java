@@ -5,6 +5,7 @@ import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
 
 import static frameworks.ReportFw.log;
+import static frameworks.ScreenshotFw.screenshotCapture;
 
 public class AuthenticationTask {
     private WebDriver driver;
@@ -19,7 +20,7 @@ public class AuthenticationTask {
         if(driver.getTitle().equals("Login - My Store")) {
             log(Status.PASS, "Validação - O titulo Login correto.");
         } else {
-            log(Status.ERROR, "Validação - O titulo Login incorreto");
+            log(Status.ERROR, "Validação - O titulo Login incorreto", screenshotCapture(driver));
         }
         authenticationAppObject.getEmailTextField().sendKeys(email);
         authenticationAppObject.getPasswordTextField().sendKeys(senha);
